@@ -2,10 +2,11 @@ package main
 
 import (
 	"errors"
-	"greenlight.webjenga.com/internal/data"
-	"greenlight.webjenga.com/internal/validator"
 	"net/http"
 	"time"
+
+	"greenlight.webjenga.com/internal/data"
+	"greenlight.webjenga.com/internal/validator"
 )
 
 func (app *application) registerUser(w http.ResponseWriter, r *http.Request) {
@@ -49,6 +50,12 @@ func (app *application) registerUser(w http.ResponseWriter, r *http.Request) {
 		default:
 			app.serverErrorResponse(w, r, err)
 		}
+		return
+	}
+
+	err = app.models.Permissions.AddForUser(user.ID, "movies:read")
+	if err != nil {
+		app.serverErrorResponse(w, r, err)
 		return
 	}
 
