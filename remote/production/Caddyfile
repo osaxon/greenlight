@@ -1,0 +1,8 @@
+{
+	email oliverrsaxon@gmail.com
+}
+
+greenlight.webjenga.com {
+	respond /debug/* "Not Permitted" 403
+    reverse_proxy localhost:4000
+}
