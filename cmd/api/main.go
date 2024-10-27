@@ -16,9 +16,12 @@ import (
 	_ "github.com/lib/pq"
 	"greenlight.webjenga.com/internal/data"
 	"greenlight.webjenga.com/internal/mailer"
+	"greenlight.webjenga.com/internal/vcs"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 type config struct {
 	port int
