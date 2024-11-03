@@ -31,9 +31,6 @@ func (r *Runtime) UnmarshalJSON(jsonValue []byte) error {
 		return ErrInvalidRuntimeFormat
 	}
 
-	// convert the int32 to a Runtime type and assign to the receiver
-	// use * operator to deference the receiver (which is a pointer to runtime type)
-	// in order to set the underlying value of the pointer
 	*r = Runtime(i)
 
 	return nil
