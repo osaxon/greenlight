@@ -75,11 +75,11 @@ func main() {
 	flag.BoolVar(&cfg.limiter.enabled, "limiter-enabled", true, "Enable rate limiter")
 
 	// smpt config
-	flag.StringVar(&cfg.smtp.host, "smtp-host", "sandbox.smtp.mailtrap.io", "SMTP host")
+	flag.StringVar(&cfg.smtp.host, "smtp-host", "", "SMTP host")
 	flag.IntVar(&cfg.smtp.port, "smtp-port", 25, "SMTP port")
-	flag.StringVar(&cfg.smtp.username, "smtp-username", "46c575311c846e", "SMTP username")
-	flag.StringVar(&cfg.smtp.password, "smtp-password", "15e1cc862afeda", "SMTP password")
-	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Greenlight <no-reply@greenlight.alexedwards.net>", "SMTP sender")
+	flag.StringVar(&cfg.smtp.username, "smtp-username", "", "SMTP username")
+	flag.StringVar(&cfg.smtp.password, "smtp-password", "", "SMTP password")
+	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "WebJenga <olisaxon@webjenga.com>", "SMTP sender")
 
 	// cors origins
 	flag.Func("cors-trusted-origins", "Trusted CORS origins (space separated)", func(val string) error {
