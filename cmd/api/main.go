@@ -76,7 +76,7 @@ func main() {
 
 	// smpt config
 	flag.StringVar(&cfg.smtp.host, "smtp-host", "", "SMTP host")
-	flag.IntVar(&cfg.smtp.port, "smtp-port", 25, "SMTP port")
+	flag.IntVar(&cfg.smtp.port, "smtp-port", 587, "SMTP port")
 	flag.StringVar(&cfg.smtp.username, "smtp-username", "", "SMTP username")
 	flag.StringVar(&cfg.smtp.password, "smtp-password", "", "SMTP password")
 	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "WebJenga <olisaxon@webjenga.com>", "SMTP sender")
